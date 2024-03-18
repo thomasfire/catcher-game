@@ -2,27 +2,19 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        index: './src/index.tsx'
+        index: './src/app.ts'
     },
     output: {
-        path: path.resolve(__dirname, '../dist/public'),
-        filename: '[name].bundle.js'
+        path: path.resolve(__dirname, '../dist/'),
+        filename: 'server.bundle.js'
     },
+    target: "node",
     module: {
         rules: [
-
             {
-                test: /\.tsx?$/,
+                test: /\.(tsx|ts)?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.(svg|png|jpe?g|gif)$/i,
-                type: 'asset/resource'
-            },
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader", 'postcss-loader'],
             },
             {
                 test: /\.(js|jsx)$/,

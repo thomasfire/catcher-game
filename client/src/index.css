@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-image: url(../assets/bg2.png); /* The image you want to use */
+  background-size: cover; /* Resize the image to cover the entire element */
+  background-repeat: repeat;
+}

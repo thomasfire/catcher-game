@@ -1,8 +1,8 @@
 import {NextFunction, Router, Response, Request} from 'express';
+import path from "path";
 
-export const indexRouter: Router = Router();
+export let indexRouter: Router = Router();
 
-indexRouter.get('/',  (req: Request, res: Response, next: NextFunction): void => {
-  res.render('index', {title: 'Express'});
+indexRouter.get('/',  (_req: Request, res: Response, _next: NextFunction): void => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
